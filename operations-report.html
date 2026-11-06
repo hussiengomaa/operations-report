@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تقرير الأداء التشغيلي – أبريل إلى أكتوبر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f7f9; --surface:#ffffff; --ink:#14212b; --ink2:#5b6873; --line:#dde2e7;
+  --accent:#1f5fbf; --accent2:#6f9be0; --accent3:#b9cff2; --muted:#c3c8cf; --warn:#b3261e; --row:#eef4fd;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#10161c; --surface:#17202a; --ink:#e8edf2; --ink2:#9aa7b3; --line:#2a3642;
+  --accent:#5b9bff; --accent2:#3f6db3; --accent3:#2c4a77; --muted:#4a5560; --warn:#ff8a80; --row:#1b2a3d;}
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Tajawal','Segoe UI',Tahoma,Arial,sans-serif;line-height:1.8;font-size:16px;
+  padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
+main{max-width:860px;margin:0 auto;padding:40px 20px 64px}
+header{border-bottom:3px solid var(--accent);padding-bottom:20px;margin-bottom:28px}
+h1{font-size:clamp(28px,5vw,40px);font-weight:800;margin:0 0 6px;line-height:1.3}
+.sub{font-size:18px;color:var(--ink2);margin:0}
+.meta{margin-top:12px;font-size:14px;color:var(--ink2)}
+h2{font-size:22px;font-weight:700;margin:44px 0 12px;padding-inline-start:12px;border-inline-start:4px solid var(--accent)}
+p{margin:0 0 12px;max-width:70ch}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.kpi b{display:block;font-size:30px;font-weight:800;line-height:1.2}
+.kpi span{font-size:14px;color:var(--ink2)}
+.kpi.main{border-color:var(--accent)}
+.kpi.main b{color:var(--accent)}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface);margin:12px 0 20px}
+table{width:100%;border-collapse:collapse;font-size:15px;min-width:460px}
+th,td{padding:10px 14px;text-align:center;border-bottom:1px solid var(--line)}
+th{background:var(--row);font-weight:700}
+td:first-child,th:first-child{text-align:start}
+tr:last-child td{border-bottom:0}
+tr.total td{font-weight:800;background:var(--row)}
+td.low{color:var(--accent);font-weight:700}
+.fig{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 12px 10px;margin:16px 0}
+.fig h3{font-size:17px;margin:0 8px 2px;font-weight:700}
+.fig .cap{font-size:13px;color:var(--ink2);margin:6px 8px 0}
+svg{display:block;width:100%;height:auto}
+svg text{font-family:inherit;fill:var(--ink)}
+svg .s2{fill:var(--ink2)}
+.stack{display:flex;height:44px;border-radius:8px;overflow:hidden;margin:16px 8px 12px;direction:rtl}
+.stack div{display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;min-width:0}
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:6px 16px;margin:0 8px;font-size:14px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:8px;vertical-align:-1px}
+ul,ol{padding-inline-start:22px;margin:0 0 12px}
+li{margin-bottom:8px;max-width:70ch}
+.note{font-size:14px;color:var(--ink2);border-top:1px solid var(--line);margin-top:36px;padding-top:14px}
+@media print{body{background:#fff}.fig,.kpi,.scroll{break-inside:avoid}}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1>تقرير الأداء التشغيلي</h1>
+  <p class="sub">تحليل الطلبات والتوصيل والإلغاء والاسترجاع</p>
+  <div class="meta">الفترة: أبريل – أكتوبر &nbsp;|&nbsp; إعداد رئيس قسم التشغيل: حسين عبدالمنعم السيد</div>
+</header>
+
+<h2>أولًا: الملخص التنفيذي</h2>
+<p>يعرض هذا التقرير مؤشرات الأداء التشغيلي خلال الفترة من أبريل إلى أكتوبر، بالاعتماد على البيانات المسجلة للطلبات وحالات التوصيل. بلغ إجمالي الطلبات 357 طلبًا، تم توصيل 209 طلبات منها، بينما لم يتم توصيل 148 طلبًا، لتصل نسبة نجاح التوصيل الإجمالية إلى 58.54%.</p>
+<div class="kpis">
+  <div class="kpi"><b>357</b><span>إجمالي الطلبات</span></div>
+  <div class="kpi"><b>209</b><span>تم التوصيل</span></div>
+  <div class="kpi"><b>148</b><span>لم يتم التوصيل</span></div>
+  <div class="kpi main"><b>58.54%</b><span>نسبة نجاح التوصيل</span></div>
+</div>
+
+<div class="fig">
+  <h3>مصير الطلبات الـ 357</h3>
+  <div class="stack" id="stack" role="img" aria-label="توزيع الطلبات: تم التوصيل 58.54%، ملغاة 18.21%، جديدة للمتابعة 17.65%، مسترجعة 5.60%"></div>
+  <div class="legend" id="legend"></div>
+  <p class="cap">النسب من إجمالي الطلبات (357). الطلبات غير الموصَّلة = 41.46%.</p>
+</div>
+
+<h2>ثانيًا: الأداء الشهري</h2>
+<p>يوضح الجدول التالي حجم الطلبات ونتائج التوصيل لكل شهر، إلى جانب نسبة نجاح التوصيل.</p>
+<div class="scroll"><table id="t-month"></table></div>
+
+<h2>ثالثًا: تحليل حالات الطلبات غير الموصَّلة</h2>
+<p>تتوزع الطلبات التي لم يتم توصيلها إلى ثلاث حالات تشغيلية: طلبات جديدة تحتاج إلى المتابعة، وطلبات مسترجعة، وطلبات تم إلغاؤها. تمثل الطلبات الملغاة أكبر حالة بعدد 65 طلبًا (43.92%)، تليها الطلبات الجديدة بعدد 63 طلبًا (42.57%)، ثم المسترجعة بعدد 20 طلبًا (13.51%).</p>
+<div class="scroll"><table id="t-status"></table></div>
+<p>ويوضح الجدول التالي توزيع هذه الحالات على مستوى الشهر.</p>
+<div class="scroll"><table id="t-status-month"></table></div>
+
+<h2>رابعًا: نسب نجاح التوصيل</h2>
+<p>تراوحت نسب نجاح التوصيل الشهرية بين 47.89% و70.37%. سجل يونيو أعلى نسبة، يليه سبتمبر بنسبة 69.84%، بينما سجل يوليو أقل نسبة خلال الفترة، يليه أبريل بنسبة 48.28%.</p>
+<div class="fig">
+  <h3>نسبة التوصيل دون المتوسط في أبريل ويوليو وأغسطس، وأدناها في يوليو</h3>
+  <div id="chart"></div>
+  <p class="cap">الأعمدة الزرقاء = أشهر دون المتوسط الإجمالي (58.54%). الرقم تحت اسم كل شهر = إجمالي الطلبات.</p>
+</div>
+
+<h2>خامسًا: أبرز النتائج والملاحظات</h2>
+<ul>
+  <li>سجل يوليو أعلى حجم طلبات (71 طلبًا)، وكان في الوقت نفسه أقل الأشهر في نسبة نجاح التوصيل (47.89%).</li>
+  <li>سجل يونيو أعلى نسبة نجاح توصيل (70.37%).</li>
+  <li>سجل يوليو أعلى عدد طلبات ملغاة (20 طلبًا)، وأعلى عدد للطلبات المسترجعة (5 طلبات) بالتساوي مع أبريل وأغسطس.</li>
+  <li>سجل أغسطس أعلى عدد طلبات جديدة تحتاج إلى المتابعة (17 طلبًا).</li>
+  <li>بلغ عدد الطلبات الجديدة التي تحتاج إلى المتابعة 63 طلبًا، وإجمالي الطلبات المسترجعة 20 طلبًا، والملغاة 65 طلبًا.</li>
+</ul>
+
+
+
+<h2>سادسًا: الخلاصة</h2>
+<p>تشير البيانات إلى أن نسبة نجاح التوصيل خلال الفترة بلغت 58.54%، مع وجود 148 طلبًا لم يكتمل توصيلها، موزعة بين 63 طلبًا جديدًا للمتابعة و20 طلبًا مسترجعًا و65 طلبًا ملغى. وتتمثل الأولوية التشغيلية في متابعة الطلبات الجديدة، وتحليل أسباب الإلغاء والاسترجاع، والاستفادة من الأشهر ذات الأداء الأعلى لتحسين نتائج التوصيل.</p>
+
+</main>
+
+<script>
+const M=[
+ {m:'أبريل',t:29,d:14,n:3,r:5,c:7},
+ {m:'مايو',t:19,d:12,n:3,r:1,c:3},
+ {m:'يونيو',t:54,d:38,n:6,r:1,c:9},
+ {m:'يوليو',t:71,d:34,n:12,r:5,c:20},
+ {m:'أغسطس',t:68,d:35,n:17,r:5,c:11},
+ {m:'سبتمبر',t:63,d:44,n:10,r:1,c:8},
+ {m:'أكتوبر',t:53,d:32,n:12,r:2,c:7}];
+const sum=k=>M.reduce((s,x)=>s+x[k],0);
+const T=sum('t'),D=sum('d'),N=sum('n'),R=sum('r'),C=sum('c'),U=T-D;
+const pct=(a,b)=>(a/b*100).toFixed(2)+'%';
+const overall=D/T*100;
+
+// month table
+document.getElementById('t-month').innerHTML=
+ '<tr><th>الشهر</th><th>إجمالي الطلبات</th><th>تم التوصيل</th><th>لم يتم التوصيل</th><th>نسبة التوصيل</th></tr>'+
+ M.map(x=>`<tr><td>${x.m}</td><td>${x.t}</td><td>${x.d}</td><td>${x.t-x.d}</td><td class="${x.d/x.t*100<overall?'low':''}">${pct(x.d,x.t)}</td></tr>`).join('')+
+ `<tr class="total"><td>الإجمالي</td><td>${T}</td><td>${D}</td><td>${U}</td><td>${pct(D,T)}</td></tr>`;
+
+// status table
+document.getElementById('t-status').innerHTML=
+ '<tr><th>الحالة</th><th>العدد</th><th>النسبة من غير الموصَّل</th><th>النسبة من إجمالي الطلبات</th></tr>'+
+ [['جديد (للمتابعة)',N],['مسترجع',R],['تم الإلغاء',C]].map(([l,v])=>`<tr><td>${l}</td><td>${v}</td><td>${pct(v,U)}</td><td>${pct(v,T)}</td></tr>`).join('')+
+ `<tr class="total"><td>الإجمالي</td><td>${U}</td><td>100%</td><td>${pct(U,T)}</td></tr>`;
+
+// status by month
+document.getElementById('t-status-month').innerHTML=
+ '<tr><th>الشهر</th><th>جديد (للمتابعة)</th><th>مسترجع</th><th>تم الإلغاء</th><th>الإجمالي</th></tr>'+
+ M.map(x=>`<tr><td>${x.m}</td><td>${x.n}</td><td>${x.r}</td><td>${x.c}</td><td>${x.n+x.r+x.c}</td></tr>`).join('')+
+ `<tr class="total"><td>الإجمالي</td><td>${N}</td><td>${R}</td><td>${C}</td><td>${U}</td></tr>`;
+
+// composition bar
+const parts=[
+ {l:'تم التوصيل',v:D,c:'var(--muted)',tc:'var(--ink)'},
+ {l:'ملغاة',v:C,c:'var(--accent)'},
+ {l:'جديدة للمتابعة',v:N,c:'var(--accent2)'},
+ {l:'مسترجعة',v:R,c:'var(--accent3)',tc:'var(--ink)'}];
+document.getElementById('stack').innerHTML=parts.map(p=>`<div style="width:${p.v/T*100}%;background:${p.c};${p.tc?'color:'+p.tc:''}">${p.v/T>0.1?pct(p.v,T):''}</div>`).join('');
+document.getElementById('legend').innerHTML=parts.map(p=>`<div><i style="background:${p.c}"></i>${p.l}: ${p.v} (${pct(p.v,T)})</div>`).join('');
+
+// monthly rate chart
+(function(){
+ const W=760,H=360,base=290,scale=176/80,left=150,right=745,band=(right-left)/M.length,bw=band*.55;
+ const y=v=>base-v*scale, cx=i=>right-band*(i+.5), ref=y(overall);
+ let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="نسبة نجاح التوصيل الشهرية مقارنة بالمتوسط الإجمالي" direction="ltr">`;
+ s+=`<line x1="${left-10}" x2="${right}" y1="${base}" y2="${base}" stroke="var(--line)" stroke-width="1.5"/>`;
+ M.forEach((x,i)=>{
+  const rate=x.d/x.t*100, low=rate<overall;
+  let ly=y(rate)-8; if(ly-12<ref+3&&ly>ref-3) ly=ref-6;
+  s+=`<rect x="${cx(i)-bw/2}" y="${y(rate)}" width="${bw}" height="${base-y(rate)}" rx="3" fill="${low?'var(--accent)':'var(--muted)'}"><title>${x.m}: ${rate.toFixed(2)}% (${x.d} من ${x.t})</title></rect>`;
+  s+=`<text x="${cx(i)}" y="${ly}" text-anchor="middle" font-size="14" font-weight="700">${rate.toFixed(2)}%</text>`;
+  s+=`<text x="${cx(i)}" y="${base+22}" text-anchor="middle" font-size="14">${x.m}</text>`;
+  s+=`<text class="s2" x="${cx(i)}" y="${base+40}" text-anchor="middle" font-size="12">${x.t} طلبًا</text>`;
+ });
+ s+=`<line x1="${left-10}" x2="${right}" y1="${ref}" y2="${ref}" stroke="var(--ink2)" stroke-width="1.5" stroke-dasharray="5 4"/>`;
+ s+=`<text class="s2" x="8" y="${ref-4}" font-size="13">المتوسط الإجمالي</text><text x="8" y="${ref+14}" font-size="14" font-weight="700">${overall.toFixed(2)}%</text>`;
+ s+=`</svg>`;
+ document.getElementById('chart').innerHTML=s;
+})();
+</script>
+</body>
+</html>
